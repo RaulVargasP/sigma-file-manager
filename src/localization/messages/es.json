@@ -73,7 +73,11 @@
     "documents": "Documentos",
     "pictures": "Imágenes",
     "videos": "Vídeos",
-    "music": "Música"
+    "movies": "Vídeos",
+    "music": "Música",
+    "public": "Pública",
+    "applications": "Aplicaciones",
+    "library": "Biblioteca"
   },
   "tabs": {
     "newTab": "Nueva pestaña",

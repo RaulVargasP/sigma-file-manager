@@ -33,11 +33,13 @@ import { useWorkspacesStore } from '@/stores/storage/workspaces';
 import { registerDropContainer, unregisterDropContainer } from '@/composables/use-drop-target-registry';
 import type { FavoriteItem, ItemTag, TaggedItem } from '@/types/user-stats';
 import { getPathDisplayName } from '@/utils/normalize-path';
+import { useLocalizedDirName } from '@/composables/use-localized-dir-name';
 import { isVirtualLocationPath } from '@/utils/virtual-locations';
 import { openNavigatorNavigablePath } from '@/utils/open-navigator-directory';
 import { arePathsEquivalent } from '@/utils/file-operation-paths';
 
 const { t } = useI18n();
+const { localizedDirName } = useLocalizedDirName();
 const router = useRouter();
 const userStatsStore = useUserStatsStore();
 const workspacesStore = useWorkspacesStore();
@@ -105,7 +107,7 @@ const tagsOpen = computed({
 
 function getItemName(path: string): string {
   if (!path) return '';
-  return getPathDisplayName(path, t) || path;
+  return localizedDirName(path, getPathDisplayName(path, t) || path);
 }
 
 function isFavoriteFile(item: FavoriteItem): boolean {

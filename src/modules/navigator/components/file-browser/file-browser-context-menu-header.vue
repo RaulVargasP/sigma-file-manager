@@ -10,6 +10,7 @@ import type { DirEntry } from '@/types/dir-entry';
 import FileBrowserEntryIcon from './file-browser-entry-icon.vue';
 import { useDirSizesStore } from '@/stores/runtime/dir-sizes';
 import { formatBytes } from './utils';
+import { useLocalizedDirName } from '@/composables/use-localized-dir-name';
 import { useFileBrowserContext } from './composables/use-file-browser-context';
 
 const props = defineProps<{
@@ -18,6 +19,7 @@ const props = defineProps<{
 
 const { t } = useI18n();
 const ctx = useFileBrowserContext();
+const { localizedEntryName } = useLocalizedDirName();
 const dirSizesStore = useDirSizesStore();
 
 const isCurrentDirMenu = computed(() => {
@@ -99,7 +101,7 @@ const selectionSizeDisplay = computed(() => {
         />
         {{ t('fileBrowser.currentDirectory') }}
         <span class="file-browser-context-menu-header__separator">·</span>
-        <span class="file-browser-context-menu-header__path">{{ selectedEntries[0].name }}</span>
+        <span class="file-browser-context-menu-header__path">{{ localizedEntryName(selectedEntries[0]) }}</span>
       </span>
     </template>
     <template v-else>

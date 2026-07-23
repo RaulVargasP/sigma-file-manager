@@ -40,6 +40,7 @@ import {
 import { toast, ToastStatic } from '@/components/ui/toaster';
 import { DirEntryInteractive } from '@/components/dir-entry-interactive';
 import { registerDropContainer, unregisterDropContainer } from '@/composables/use-drop-target-registry';
+import { useLocalizedDirName } from '@/composables/use-localized-dir-name';
 import { useShortcutsStore } from '@/stores/runtime/shortcuts';
 import { usePlatformStore } from '@/stores/runtime/platform';
 import { getPathDisplayName } from '@/utils/normalize-path';
@@ -62,6 +63,7 @@ const emit = defineEmits<{
 }>();
 
 const { t } = useI18n();
+const { localizedDirName } = useLocalizedDirName();
 const shortcutsStore = useShortcutsStore();
 const platformStore = usePlatformStore();
 const { drives } = useDrives();
@@ -256,7 +258,7 @@ onUnmounted(() => {
                 class="address-bar__part-icon"
               />
               <template v-else>
-                {{ part.name }}
+                {{ localizedDirName(part.path, part.name) }}
               </template>
             </button>
           </DirEntryInteractive>
@@ -301,7 +303,7 @@ onUnmounted(() => {
                     :size="14"
                     class="address-bar__separator-menu-icon"
                   />
-                  <span class="address-bar__separator-menu-path">{{ getPathDisplayName(dirPath) || dirPath }}</span>
+                  <span class="address-bar__separator-menu-path">{{ localizedDirName(dirPath, getPathDisplayName(dirPath) || dirPath) }}</span>
                 </DropdownMenuItem>
               </ScrollArea>
             </DropdownMenuContent>

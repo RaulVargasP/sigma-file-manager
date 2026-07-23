@@ -13,6 +13,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { useNavigatorItemIcon } from '@/composables/use-navigator-item-icon';
 import UbuntuWslIcon from '@/components/icons/ubuntu-wsl-icon.vue';
 import { isWslPath } from '@/utils/normalize-path';
+import { useLocalizedDirName } from '@/composables/use-localized-dir-name';
 import type { DirEntry } from '@/types/dir-entry';
 import { useInfoPanelLayout } from './composables/use-info-panel-layout';
 
@@ -28,6 +29,7 @@ const emit = defineEmits<{
 }>();
 
 const { t } = useI18n();
+const { localizedEntryName } = useLocalizedDirName();
 const { hasCustomPanelSizes } = useInfoPanelLayout();
 
 const { iconSrc, fallbackIconComponent } = useNavigatorItemIcon({
@@ -76,7 +78,7 @@ const rootProps = computed<Record<string, unknown>>(() => {
       :class="{ 'info-panel-header__icon--folder': selectedEntry?.is_dir }"
     />
     <span class="info-panel-header__name">
-      {{ selectedEntry?.name || t('noData') }}
+      {{ selectedEntry ? localizedEntryName(selectedEntry) : t('noData') }}
     </span>
     <div
       v-if="props.showResetButton && hasCustomPanelSizes"

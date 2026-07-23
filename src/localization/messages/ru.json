@@ -73,7 +73,11 @@
     "documents": "Документы",
     "pictures": "Фотографии",
     "videos": "Видео",
-    "music": "Музыка"
+    "movies": "Фильмы",
+    "music": "Музыка",
+    "public": "Общие",
+    "applications": "Программы",
+    "library": "Библиотека"
   },
   "tabs": {
     "newTab": "Новая вкладка",

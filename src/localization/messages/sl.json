@@ -73,7 +73,11 @@
     "documents": "Dokumenti",
     "pictures": "Slike",
     "videos": "Videi",
-    "music": "Glasba"
+    "movies": "Filmi",
+    "music": "Glasba",
+    "public": "Javno",
+    "applications": "Aplikacije",
+    "library": "Knjižnica"
   },
   "tabs": {
     "newTab": "Nov zavihek",

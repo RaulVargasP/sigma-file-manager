@@ -73,7 +73,11 @@
     "documents": "اسناد",
     "pictures": "تصاویر",
     "videos": "فیلم های",
-    "music": "موسیقی"
+    "movies": "فیلم‌ها",
+    "music": "موسیقی",
+    "public": "عمومی",
+    "applications": "برنامه‌ها",
+    "library": "کتابخانه"
   },
   "tabs": {
     "newTab": "برگه جدید",

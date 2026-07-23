@@ -18,6 +18,7 @@ import { useUserSettingsStore } from '@/stores/storage/user-settings';
 import { usePlatformStore } from '@/stores/runtime/platform';
 import FileBrowserEntryIcon from './file-browser-entry-icon.vue';
 import { useRelativeDateDisplayClock } from '@/composables/use-relative-date-display';
+import { useLocalizedDirName } from '@/composables/use-localized-dir-name';
 import { useFileBrowserContext } from './composables/use-file-browser-context';
 import { useFileBrowserTags } from './composables/use-file-browser-tags';
 import { getDriveEntryVolumeSizeBytes } from '@/utils/drive-icon';
@@ -102,6 +103,7 @@ const props = withDefaults(defineProps<{
 });
 
 const ctx = useFileBrowserContext();
+const { localizedEntryName } = useLocalizedDirName();
 
 const clipboardStore = useClipboardStore();
 const dirSizesStore = useDirSizesStore();
@@ -474,7 +476,7 @@ const visibleRows = computed<FileBrowserListDisplayRow[]>(() => {
             />
             <div class="file-browser-list-view__entry-name-content">
               <div class="file-browser-list-view__entry-name-row">
-                <span class="file-browser-list-view__entry-text">{{ row.entry.name }}</span>
+                <span class="file-browser-list-view__entry-text">{{ localizedEntryName(row.entry) }}</span>
                 <span
                   v-if="columnVisibility.linkTarget && row.entry.link_target"
                   class="file-browser-list-view__entry-link-target"

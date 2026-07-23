@@ -73,7 +73,11 @@
     "documents": "文件",
     "pictures": "图片",
     "videos": "视频",
-    "music": "音乐"
+    "movies": "影片",
+    "music": "音乐",
+    "public": "公共",
+    "applications": "应用程序",
+    "library": "资源库"
   },
   "tabs": {
     "newTab": "新标签页",

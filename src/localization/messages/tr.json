@@ -73,7 +73,11 @@
     "documents": "Belgeler",
     "pictures": "Resimler",
     "videos": "Videolar",
-    "music": "Müzik"
+    "movies": "Filmler",
+    "music": "Müzik",
+    "public": "Ortak",
+    "applications": "Uygulamalar",
+    "library": "Kitaplık"
   },
   "tabs": {
     "newTab": "Yeni sekme",

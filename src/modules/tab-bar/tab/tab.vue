@@ -12,6 +12,7 @@ import { useUserSettingsStore } from '@/stores/storage/user-settings';
 import type { Tab } from '@/types/workspaces';
 import { Layers, XIcon, XLineTopIcon } from '@lucide/vue';
 import { getPathDisplayName, getPathDisplayValue } from '@/utils/normalize-path';
+import { useLocalizedDirName } from '@/composables/use-localized-dir-name';
 import {
   Tooltip,
   TooltipContent,
@@ -41,6 +42,7 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<Emits>();
 
 const { t } = useI18n();
+const { localizedDirName } = useLocalizedDirName();
 const workspacesStore = useWorkspacesStore();
 const userSettingsStore = useUserSettingsStore();
 const dragSession = useFileBrowserDragSession();
@@ -125,7 +127,8 @@ function getTabDisplayName(tab: Tab | undefined): string {
     return '';
   }
 
-  return getPathDisplayName(tab.path, t) || getPathDisplayName(tab.name, t) || tab.name || tab.path;
+  const displayName = getPathDisplayName(tab.path, t) || getPathDisplayName(tab.name, t) || tab.name || tab.path;
+  return tab.path ? localizedDirName(tab.path, displayName) : displayName;
 }
 
 const tabName = computed(() => {

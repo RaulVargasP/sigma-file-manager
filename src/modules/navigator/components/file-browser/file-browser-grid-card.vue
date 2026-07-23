@@ -17,6 +17,7 @@ import { useDirSizesStore } from '@/stores/runtime/dir-sizes';
 import { useItemCountsStore } from '@/stores/runtime/item-counts';
 import { Skeleton } from '@/components/ui/skeleton';
 import FileBrowserEntryIcon from './file-browser-entry-icon.vue';
+import { useLocalizedDirName } from '@/composables/use-localized-dir-name';
 import { useFileBrowserContext } from './composables/use-file-browser-context';
 import { usePlatformStore } from '@/stores/runtime/platform';
 import { resolveImageDisplaySrc } from '@/modules/navigator/utils/resolve-image-display-src';
@@ -41,6 +42,7 @@ const dirSizesStore = useDirSizesStore();
 const itemCountsStore = useItemCountsStore();
 const { clipboardItems, clipboardType, showClipboardUi } = storeToRefs(clipboardStore);
 const { t } = useI18n();
+const { localizedEntryName } = useLocalizedDirName();
 const previewRef = ref<HTMLElement | null>(null);
 const isPreviewInLoadRange = ref(false);
 const loadedImagePreviewSrc = ref<string | undefined>();
@@ -398,7 +400,7 @@ watch(imagePreviewPlaceholderSrc, () => {
         'file-browser-grid-card__info--bottom': props.variant === 'other',
       }"
     >
-      <span class="file-browser-grid-card__name">{{ props.entry.name }}</span>
+      <span class="file-browser-grid-card__name">{{ localizedEntryName(props.entry) }}</span>
       <div class="file-browser-grid-card__meta">
         <LoaderCircleIcon
           v-if="props.variant === 'dir' && isDirLoadingWithProgress(props.entry)"

@@ -73,7 +73,11 @@
     "documents": "दस्तावेज़",
     "pictures": "चित्र",
     "videos": "वीडियो",
-    "music": "संगीत"
+    "movies": "फ़िल्में",
+    "music": "संगीत",
+    "public": "सार्वजनिक",
+    "applications": "ऐप्लिकेशन",
+    "library": "लाइब्रेरी"
   },
   "tabs": {
     "newTab": "नया टैब",

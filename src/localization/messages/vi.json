@@ -73,7 +73,11 @@
     "documents": "Tài liệu",
     "pictures": "Hình ảnh",
     "videos": "Video",
-    "music": "Nhạc"
+    "movies": "Phim",
+    "music": "Nhạc",
+    "public": "Chung",
+    "applications": "Ứng dụng",
+    "library": "Thư viện"
   },
   "tabs": {
     "newTab": "Thẻ mới",

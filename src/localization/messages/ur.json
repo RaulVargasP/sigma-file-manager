@@ -73,7 +73,11 @@
     "documents": "دستاویزات",
     "pictures": "تصاویر",
     "videos": "ویڈیوز",
-    "music": "موسیقی"
+    "movies": "فلمیں",
+    "music": "موسیقی",
+    "public": "عوامی",
+    "applications": "ایپلیکیشنز",
+    "library": "لائبریری"
   },
   "tabs": {
     "newTab": "نیا ٹیب",

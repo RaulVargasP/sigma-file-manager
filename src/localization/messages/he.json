@@ -73,7 +73,11 @@
     "documents": "מסמכים",
     "pictures": "תמונות",
     "videos": "סרטונים",
-    "music": "מוזיקה"
+    "music": "מוזיקה",
+    "movies": "סרטים",
+    "public": "ציבורי",
+    "applications": "יישומים",
+    "library": "ספריה"
   },
   "tabs": {
     "newTab": "לשונית חדשה",

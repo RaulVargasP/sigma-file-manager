@@ -73,7 +73,11 @@
     "documents": "Documents",
     "pictures": "Pictures",
     "videos": "Videos",
-    "music": "Music"
+    "movies": "Movies",
+    "music": "Music",
+    "public": "Public",
+    "applications": "Applications",
+    "library": "Library"
   },
   "tabs": {
     "newTab": "New tab",

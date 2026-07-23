@@ -73,7 +73,11 @@
     "documents": "ドキュメント",
     "pictures": "ピクチャ",
     "videos": "ビデオ",
-    "music": "ミュージック"
+    "movies": "ムービー",
+    "music": "ミュージック",
+    "public": "パブリック",
+    "applications": "アプリケーション",
+    "library": "ライブラリ"
   },
   "tabs": {
     "newTab": "新しいタブ",
